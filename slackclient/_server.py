@@ -66,7 +66,7 @@ class Server(object):
     def connect_slack_websocket(self, ws_url):
         try:
             self.websocket = create_connection(ws_url)
-            self.websocket.sock.setblocking(0)
+            self.websocket.sock.setblocking(False)
         except:
             raise SlackConnectionError
 
